@@ -9,6 +9,8 @@ int main() {
     int bispo = 5;
     int torre = 5;
     int rainha = 8;
+    int cavaloHorizontal = 1;
+    int cavaloVertical = 3;
     int movimentoInicial = 1;
     int opcao;
 
@@ -18,6 +20,7 @@ int main() {
     printf("1. Bispo\n");
     printf("2. Torre\n");
     printf("3. Rainha\n");
+    printf("4. Cavalo\n");
     scanf("%d", &opcao);
 
     switch(opcao)
@@ -50,6 +53,21 @@ int main() {
             {
                 printf("Esquerda\n");
                 movimentoInicial++;
+            }
+            break;
+
+        case 4:
+            // Implementação de Movimentação do Cavalo
+            printf("Movimento do cavalo:\n");
+            for(int i = 1; movimentoInicial <= cavaloHorizontal; i++)
+            {
+                while(movimentoInicial <= cavaloVertical)
+                {
+                    printf("Baixo\n");
+                    movimentoInicial++;
+                }
+
+                printf("Esquerda\n");
             }
             break;
 
