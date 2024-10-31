@@ -2,6 +2,40 @@
 
 // Desafio de Xadrez - MateCheck
 
+//Função recursiva para movimentação do bispo
+void movimentarBispo(int quantidadeMovimento, int maximoMovimento)
+{
+    if(quantidadeMovimento <= maximoMovimento)
+    {
+        printf("Cima\n");
+        printf("Direita\n");
+
+        movimentarBispo(quantidadeMovimento + 1, maximoMovimento);
+    }
+}
+
+//Função recursiva para movimentação da torre
+void movimentarTorre(int quantidadeMovimento, int maximoMovimento)
+{
+    if(quantidadeMovimento <= maximoMovimento)
+    {
+        printf("Direita\n");
+
+        movimentarTorre(quantidadeMovimento + 1, maximoMovimento);
+    }
+}
+
+//Função recursiva para movimentação da Rainha
+void movimentarRainha(int quantidadeMovimento, int maximoMovimento)
+{
+    if(quantidadeMovimento <= maximoMovimento)
+    {
+        printf("Esquerda\n");
+
+        movimentarTorre(quantidadeMovimento + 1, maximoMovimento);
+    }
+}
+
 int main() {
     //Declaração de variáveis
     int bispo = 5;
@@ -26,32 +60,19 @@ int main() {
         case 1:
             // Implementação de Movimentação do Bispo
             printf("Movimento do Bispo:\n");
-            while(movimentoInicial <= bispo)
-            {
-                printf("Cima\n");
-                printf("Direita\n");
-                movimentoInicial++;
-            }
+            movimentarBispo(movimentoInicial, bispo);
             break;
 
         case 2:
             // Implementação de Movimentação da Torre
             printf("Movimento da torre:\n");
-            while(movimentoInicial <= torre)
-            {
-                printf("Direita\n");
-                movimentoInicial++;
-            }
+            movimentarTorre(movimentoInicial, torre);
             break;
 
         case 3:
             // Implementação de Movimentação da Rainha
             printf("Movimento da rainha:\n");
-            while(movimentoInicial <= rainha)
-            {
-                printf("Esquerda\n");
-                movimentoInicial++;
-            }
+            movimentarRainha(movimentoInicial, rainha);
             break;
 
         case 4:
